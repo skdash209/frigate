@@ -18,6 +18,7 @@ class SqliteVecQueueDatabase(SqliteQueueDatabase):
 
     def _load_vec_extension(self, conn: sqlite3.Connection) -> None:
         conn.enable_load_extension(True)
+        print(f"Loading vec0 extension from {self.sqlite_vec_path}")
         conn.load_extension(self.sqlite_vec_path)
         conn.enable_load_extension(False)
 
